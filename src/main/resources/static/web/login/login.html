@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../assets/bank.png"/>
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>LOGIN & SIGN UP FORM </title>
+  </head>
+  <body>
+    <div id="app">
+      {{validarMail}}
+      <div class="container">
+        <div class="forms-container">
+          <div class="signin-signup">
+            <form v-on:submit.prevent="login" class="sign-in-form">
+              <h2 class="title">Login</h2>
+              <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input v-model="email" type="email" placeholder="Enter email" required/>
+              </div>
+              <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input v-model="password" type="password" placeholder="Password" required/>
+              </div>
+              <!-- <span  class="mensaje-invalido">{{errorMensajePeticion}}</span> -->
+              <input type="submit" value="Log in" class="btn solid" />
+            </form>
+  
+            <form v-on:submit.prevent="register" class="sign-up-form">
+              <h2 class="title">Sign Up</h2>
+              <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input v-model="firsNameRegister" type="text" placeholder="Enter your first name" required minlength="2" maxlength="15"/>
+              </div>
+              <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input v-model="lastNameRegister" type="text" placeholder="Enter your last name" required minlength="2" maxlength="15"/>
+              </div>
+              <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input v-model="emailRegister" type="email" placeholder="Enter a valid email address" required/>
+              </div>
+              <div v-if="emailInvalid">
+                <span class="mensaje-invalido">Email inválido</span>
+              </div>
+              <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input v-model="passwordRegister" type="password" placeholder="Password" required/>
+                <!-- <i class="fas" :class="{'fa-eye-slash': passwordHidden, 'fa-eye': !passwordHidden}" v-on:click="passwordHidden = !passwordHidden"></i> -->
+              </div>
+              <input  type="submit" class="btn" value="Sign up" />
+            </form>
+          </div>
+        </div>
+  
+        <div class="panels-container">
+          <div class="panel left-panel">
+            <div class="content">
+              <h3>¿Eres nuevo?</h3>
+              <p>
+                
+              </p>
+              <button class="btn transparent" id="sign-up-btn">
+                Registrarse
+              </button>
+            </div>
+            <img src="img/men-in-pc.png" class="image" alt="" />
+          </div>
+          <div class="panel right-panel">
+            <div class="content">
+              <h3>Ya tengo una cuenta</h3>
+              <p>
+                
+              </p>
+              <button class="btn transparent" id="sign-in-btn">
+                Ingresar
+              </button>
+            </div>
+            <img src="img/reg.png" class="image" alt="mujerPC" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

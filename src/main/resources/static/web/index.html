@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="icon" type="image/png" href="./assets/bank.png"/>
+    <title>Building Bank - Home</title>
+</head>
+<body>
+    <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+              <a href="#" class="navbar-brand">
+                <svg width="40" height="40" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 595.28 841.89" style="enable-background:new 0 0 595.28 841.89;" xml:space="preserve" fill="white">
+      <g>
+          <path class="st1" d="M-46.49,176.48c5.53-5.07,13.1-3.77,19.97-3.77c47.64,0.02,95.27,0.17,142.91,0.46
+              c10.17,0.06,20.08-0.08,29.51-6.07c4.69-30.71-14.46-52.3-42.52-70.72c21.78-10.06,43.55-6,64.21-6.23
+              c80.12-0.89,160.27-0.64,240.41-0.45c39.56,0.09,79.07,5.65,112.65,22.38c40.69,20.26,72.18,49.61,81.69,90.63
+              c8.07,34.82,3.51,68.91-13.25,101.79c-6.62,12.99-14.23,24.97-29.77,31.88c-5.26,2.34-7.94,6.4-11.96,10.22
+              c20.34,12.85,40.87,23.71,56.94,40.46c13.88,14.47,24.23,29.72,28.4,46.81c22.95,94.14-26.98,167.32-145.53,187.18
+              c-12.26,2.05-20.45,6.71-29.01,15.57c-36.03,37.28-79.08,64.42-140.19,67.97c-95.12,5.53-190.17,1.52-285.23,2.49
+              c-20.58,0.21-41.09-5.41-61.86,0.23c-6.99,1.9-13.82-1.47-17.92-6.5c-0.91-4.85,1.92-7.33,5.86-9.35
+              c26.23-13.44,36.31-33.33,36.21-58.71c-0.53-131.24-0.71-262.49-0.22-393.73c0.09-23.35-11.57-40.31-32.78-53.54
+              C-42.01,182.97-46.8,181.97-46.49,176.48z M232.98,239.99c-3.8,3.34-2.29,7.16-2.31,10.61c-0.24,42.31-0.71,84.62-0.2,126.93
+              c0.15,12.31-4.6,21.76-14.23,30.73c-21.25,19.8-35.29,42.9-47.11,67.76c-6.38,13.41,0.23,30.64-17.45,40.9
+              c-8.21-92.22,0.66-184.47-5.06-277.09c-24.08-0.75-45.96-1.5-68.59,0.95c0,132.05,0,262.47,0,392.24
+              c3.35,2.86,6.17,4.41,10.16,4.38c73.29-0.63,146.71,4.11,219.84-3.33c45.81-4.66,87.96-23.88,97.67-63.99
+              c7.01-28.97-10.57-70.68-36.88-84.73c-35.26-18.82-72.75-19.16-111.19-9.97c-9.05,2.16-16.97,6.82-24.24,13.3
+              c-10.06,8.98-17.13,21.54-32.98,25.59c-7.22-6.73-7.78-13.77-7.76-22.02c0.03-13.62,5.22-25.85,11.91-37.34
+              c12.43-21.35,29.91-39.72,56.99-49.18c16.93-5.91,35.12-9.25,52.14-15.02c25.91-8.79,46.26-22.73,56.06-45.89
+              c5.56-13.12,1.4-26.24,1.67-39.31c0.59-28.27-25.34-55.13-58.45-60.91C286.56,239.99,259.79,237.28,232.98,239.99z M454.62,316.26
+              c35.75-11.63,60.36-28.8,68.82-59.51c2.86-10.38-1.35-20.11-0.15-30.15c2.97-24.99-23.25-48.8-47.81-55.32
+              c-30.67-8.15-62.76-11.44-94.94-11.36c-43.87,0.1-87.73,1.33-131.59,2.16c-6.3,0.12-13.31-0.89-17.14,5.43
+              c4.09,3.35,9.32,4.99,14.98,4.94c32.14-0.29,63.13,2.65,94.51,10.72c27.93,7.18,51.11,19.01,70.06,35.66
+              C441.35,245.21,457.45,277.44,454.62,316.26z M390.61,424.61c50.53,22.27,87.64,50.95,92.38,100.18
+              c0.92,9.56,3.36,18.52,9.42,26.57c59.23-14.61,71.47-53.25,64.44-95.75c-8.45-51.08-57.78-62.27-111.49-64.75
+              c0-6.43,0-11.98,0-17.53C434.36,395.84,413.94,410.98,390.61,424.61z"></path>
+      </g>
+      </svg>
+          </i>Building<b>Bank</b></a>  		
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <!-- Collection of nav links, forms, and other content for toggling -->
+              <div id="navbarSupportedContent" class="collapse navbar-collapse justify-content-end">
+                <div class="navbar-nav ml-auto">
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#contactanos" class="nav-item nav-link active"><span>Contactanos</span></a>
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#terminosCondiciones" class="nav-item nav-link active"><span>Terminos y Condiciones</span></a>
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#acercaDeNosotros" class="nav-item nav-link active"><span>Sobre Nosotros </span></a>
+                  <a href="./login/login.html" class="nav-item nav-link active"><span>Ingresa / Registrate</span></a>
+                  
+                </div>
+              </div>
+            </nav>
+    </header>
+
+    <main>
+      <div>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./assets/carousel-item-1.jpg" class="d-block w-100" alt="carousel-item-1">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/carousel-item-2.jpg" class="d-block w-100" alt="carousel-item-2">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/carousel-item-3.jpg" class="d-block w-100" alt="carousel-item-3">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/carousel-item-4.jpg" class="d-block w-100" alt="carousel-item-4">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+      </div>
+      <div class="d-flex justify-content-center my-5">
+        <div class="mensaje-index text-center col-10 d-flex">
+          <div class="container p-4">
+            <div>
+              <h2"><b>Elegí creer en nosotros</b></h2>
+              <p>En Building Bank queremos que nuestros clientes tengan la confianza de que su bolsillo esta a salvo</p>
+              <p>Por eso, por cada transaccion a partir de los 20.000 pesos, <b>¡¡¡¡Te reintegramos un 1%!!!!</b>.</p>
+  
+            </div>
+            <div>
+              
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+
+
+
+      <!-- Modal TERMINOS Y CONDICIONES-->
+      <div class="modal fade" id="terminosCondiciones" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Terms and Conditions</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <pre>
+                Welcome to Buildin Bank!
+
+These terms and conditions outline the rules and regulations for the use of Building Bank's Website, located at www.buildingbank.com.ar.
+
+By accessing this website, we assume you accept these terms and conditions. Do not continue to use Buildin Bank if you do not agree to take all of the terms and conditions stated on this page.
+
+Cookies:
+The website uses cookies to help personalize your online experience. By accessing Buildin Bank, you agreed to use the required cookies.
+
+A cookie is a text file that is placed on your hard disk by a web page server. Cookies cannot be used to run programs or deliver viruses to your computer. Cookies are uniquely assigned to you and can only be read by a web server in the domain that issued the cookie to you.
+
+We may use cookies to collect, store, and track information for statistical or marketing purposes to operate our website. You have the ability to accept or decline optional Cookies. There are some required Cookies that are necessary for the operation of our website. These cookies do not require your consent as they always work. Please keep in mind that by accepting required Cookies, you also accept third-party Cookies, which might be used via third-party provided services if you use such services on our website, for example, a video display window provided by third parties and integrated into our website.
+
+License:
+Unless otherwise stated, Building Bank and/or its licensors own the intellectual property rights for all material on Buildin Bank. All intellectual property rights are reserved. You may access this from Buildin Bank for your own personal use subjected to restrictions set in these terms and conditions.
+
+You must not:
+
+Copy or republish material from Buildin Bank
+Sell, rent, or sub-license material from Buildin Bank
+Reproduce, duplicate or copy material from Buildin Bank
+Redistribute content from Buildin Bank
+This Agreement shall begin on the date hereof.
+
+Parts of this website offer users an opportunity to post and exchange opinions and information in certain areas of the website. Building Bank does not filter, edit, publish or review Comments before their presence on the website. Comments do not reflect the views and opinions of Building Bank, its agents, and/or affiliates. Comments reflect the views and opinions of the person who posts their views and opinions. To the extent permitted by applicable laws, Building Bank shall not be liable for the Comments or any liability, damages, or expenses caused and/or suffered as a result of any use of and/or posting of and/or appearance of the Comments on this website.
+
+Building Bank reserves the right to monitor all Comments and remove any Comments that can be considered inappropriate, offensive, or causes breach of these Terms and Conditions.
+
+You warrant and represent that:
+
+You are entitled to post the Comments on our website and have all necessary licenses and consents to do so;
+The Comments do not invade any intellectual property right, including without limitation copyright, patent, or trademark of any third party;
+The Comments do not contain any defamatory, libelous, offensive, indecent, or otherwise unlawful material, which is an invasion of privacy.
+The Comments will not be used to solicit or promote business or custom or present commercial activities or unlawful activity.
+You hereby grant Building Bank a non-exclusive license to use, reproduce, edit and authorize others to use, reproduce and edit any of your Comments in any and all forms, formats, or media.
+
+Hyperlinking to our Content:
+The following organizations may link to our Website without prior written approval:
+
+Government agencies;
+Search engines;
+News organizations;
+Online directory distributors may link to our Website in the same manner as they hyperlink to the Websites of other listed businesses; and
+System-wide Accredited Businesses except soliciting non-profit organizations, charity shopping malls, and charity fundraising groups which may not hyperlink to our Web site.
+These organizations may link to our home page, to publications, or to other Website information so long as the link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement, or approval of the linking party and its products and/or services; and (c) fits within the context of the linking party's site.
+
+We may consider and approve other link requests from the following types of organizations:
+
+commonly-known consumer and/or business information sources;
+dot.com community sites;
+associations or other groups representing charities;
+online directory distributors;
+internet portals;
+accounting, law, and consulting firms; and
+educational institutions and trade associations.
+We will approve link requests from these organizations if we decide that: (a) the link would not make us look unfavorably to ourselves or to our accredited businesses; (b) the organization does not have any negative records with us; (c) the benefit to us from the visibility of the hyperlink compensates the absence of Building Bank; and (d) the link is in the context of general resource information.
+
+These organizations may link to our home page so long as the link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement, or approval of the linking party and its products or services; and (c) fits within the context of the linking party's site.
+
+If you are one of the organizations listed in paragraph 2 above and are interested in linking to our website, you must inform us by sending an e-mail to Building Bank. Please include your name, your organization name, contact information as well as the URL of your site, a list of any URLs from which you intend to link to our Website, and a list of the URLs on our site to which you would like to link. Wait 2-3 weeks for a response.
+
+Approved organizations may hyperlink to our Website as follows:
+
+By use of our corporate name; or
+By use of the uniform resource locator being linked to; or
+Using any other description of our Website being linked to that makes sense within the context and format of content on the linking party's site.
+No use of Building Bank's logo or other artwork will be allowed for linking absent a trademark license agreement.
+
+Content Liability:
+We shall not be held responsible for any content that appears on your Website. You agree to protect and defend us against all claims that are raised on your Website. No link(s) should appear on any Website that may be interpreted as libelous, obscene, or criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third party rights.
+
+Reservation of Rights:
+We reserve the right to request that you remove all links or any particular link to our Website. You approve to immediately remove all links to our Website upon request. We also reserve the right to amend these terms and conditions and its linking policy at any time. By continuously linking to our Website, you agree to be bound to and follow these linking terms and conditions.
+
+Removal of links from our website:
+If you find any link on our Website that is offensive for any reason, you are free to contact and inform us at any moment. We will consider requests to remove links, but we are not obligated to or so or to respond to you directly.
+
+We do not ensure that the information on this website is correct. We do not warrant its completeness or accuracy, nor do we promise to ensure that the website remains available or that the material on the website is kept up to date.
+
+Disclaimer:
+To the maximum extent permitted by applicable law, we exclude all representations, warranties, and conditions relating to our website and the use of this website. Nothing in this disclaimer will:
+
+limit or exclude our or your liability for death or personal injury;
+limit or exclude our or your liability for fraud or fraudulent misrepresentation;
+limit any of our or your liabilities in any way that is not permitted under applicable law; or
+exclude any of our or your liabilities that may not be excluded under applicable law.
+The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities arising in contract, in tort, and for breach of statutory duty.
+
+As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.
+              </pre>
+            </div>
+            <div class="modal-footer">
+              
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal SOBRE NOSOTROS-->
+      <div class="modal fade" id="acercaDeNosotros" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="aboutModalLabel">Sobre Nosotros</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Somos una empresa de gran renombre a nivel mundial</p>
+              <p>Building Bank nacio por las ganas de querer ayudar a las personas a tener una forma segura de manejar sus cuentas</p>
+              <p>Ahora, te preguntaras que es Home Banking, te cuento:</p>
+              <p>
+                Home Banking es operar con su Banco pero sin ir al Banco.<br> Tiene todas las operaciones que pueda necesitar disponibles:
+                <ul>
+                  <li>Consultar la Posición Consolidada de todos sus productos en el Banco.</li>
+                  <li>Consultar saldos, movimientos, extractos, resúmenes de cuenta y CBU.</li>
+                  <li>Realizar transferencias inmediatas a cuentas propias o de terceros a cualquier Banco del sistema financiero.</li>
+                  <li>Consultar Tarjetas de Crédito, los últimos consumos, el resumen de cuenta, los límites y la fecha de vencimiento.</li>
+                  <li>Pagar Impuestos y Servicios y tenerlo adherido para que en el próximo vencimiento Home Banking se lo recuerde.</li>
+                  <li>Hacer Plazos Fijos, realizar inversiones y Recargar su teléfono celular y su Tarjeta para pagar el Transporte Público.</li>
+                </ul>
+                
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal CONTACTO-->
+      <div class="modal fade" id="contactanos" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="contactModalLabel">Contactanos</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Acercate a nuestra sucursal en:</p>
+              <p>742 Evergreen Terrace </p>
+              <p>o tambien podes llamarnos al siguiente numero:</p>
+              <a href="#" style="text-decoration:none ;">+954 1122334455</a>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+
+
+    <div class="container">
+
+      <footer style="background-color: #ffede7;">
+        
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2020 Copyright:
+          <span class="text-dark">Brakpian</span>
+        </div>
+        
+      </footer>
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+</body>
+</html>

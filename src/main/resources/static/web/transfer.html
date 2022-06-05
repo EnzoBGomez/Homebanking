@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="icon" type="image/png" href="../assets/bank.png"/>
+    <title>Transfers</title>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a href="#" class="navbar-brand">
+          <svg width="40" height="40" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 595.28 841.89" style="enable-background:new 0 0 595.28 841.89;" xml:space="preserve" fill="white">
+<g>
+	<path class="st1" d="M-46.49,176.48c5.53-5.07,13.1-3.77,19.97-3.77c47.64,0.02,95.27,0.17,142.91,0.46
+		c10.17,0.06,20.08-0.08,29.51-6.07c4.69-30.71-14.46-52.3-42.52-70.72c21.78-10.06,43.55-6,64.21-6.23
+		c80.12-0.89,160.27-0.64,240.41-0.45c39.56,0.09,79.07,5.65,112.65,22.38c40.69,20.26,72.18,49.61,81.69,90.63
+		c8.07,34.82,3.51,68.91-13.25,101.79c-6.62,12.99-14.23,24.97-29.77,31.88c-5.26,2.34-7.94,6.4-11.96,10.22
+		c20.34,12.85,40.87,23.71,56.94,40.46c13.88,14.47,24.23,29.72,28.4,46.81c22.95,94.14-26.98,167.32-145.53,187.18
+		c-12.26,2.05-20.45,6.71-29.01,15.57c-36.03,37.28-79.08,64.42-140.19,67.97c-95.12,5.53-190.17,1.52-285.23,2.49
+		c-20.58,0.21-41.09-5.41-61.86,0.23c-6.99,1.9-13.82-1.47-17.92-6.5c-0.91-4.85,1.92-7.33,5.86-9.35
+		c26.23-13.44,36.31-33.33,36.21-58.71c-0.53-131.24-0.71-262.49-0.22-393.73c0.09-23.35-11.57-40.31-32.78-53.54
+		C-42.01,182.97-46.8,181.97-46.49,176.48z M232.98,239.99c-3.8,3.34-2.29,7.16-2.31,10.61c-0.24,42.31-0.71,84.62-0.2,126.93
+		c0.15,12.31-4.6,21.76-14.23,30.73c-21.25,19.8-35.29,42.9-47.11,67.76c-6.38,13.41,0.23,30.64-17.45,40.9
+		c-8.21-92.22,0.66-184.47-5.06-277.09c-24.08-0.75-45.96-1.5-68.59,0.95c0,132.05,0,262.47,0,392.24
+		c3.35,2.86,6.17,4.41,10.16,4.38c73.29-0.63,146.71,4.11,219.84-3.33c45.81-4.66,87.96-23.88,97.67-63.99
+		c7.01-28.97-10.57-70.68-36.88-84.73c-35.26-18.82-72.75-19.16-111.19-9.97c-9.05,2.16-16.97,6.82-24.24,13.3
+		c-10.06,8.98-17.13,21.54-32.98,25.59c-7.22-6.73-7.78-13.77-7.76-22.02c0.03-13.62,5.22-25.85,11.91-37.34
+		c12.43-21.35,29.91-39.72,56.99-49.18c16.93-5.91,35.12-9.25,52.14-15.02c25.91-8.79,46.26-22.73,56.06-45.89
+		c5.56-13.12,1.4-26.24,1.67-39.31c0.59-28.27-25.34-55.13-58.45-60.91C286.56,239.99,259.79,237.28,232.98,239.99z M454.62,316.26
+		c35.75-11.63,60.36-28.8,68.82-59.51c2.86-10.38-1.35-20.11-0.15-30.15c2.97-24.99-23.25-48.8-47.81-55.32
+		c-30.67-8.15-62.76-11.44-94.94-11.36c-43.87,0.1-87.73,1.33-131.59,2.16c-6.3,0.12-13.31-0.89-17.14,5.43
+		c4.09,3.35,9.32,4.99,14.98,4.94c32.14-0.29,63.13,2.65,94.51,10.72c27.93,7.18,51.11,19.01,70.06,35.66
+		C441.35,245.21,457.45,277.44,454.62,316.26z M390.61,424.61c50.53,22.27,87.64,50.95,92.38,100.18
+		c0.92,9.56,3.36,18.52,9.42,26.57c59.23-14.61,71.47-53.25,64.44-95.75c-8.45-51.08-57.78-62.27-111.49-64.75
+		c0-6.43,0-11.98,0-17.53C434.36,395.84,413.94,410.98,390.61,424.61z"></path>
+</g>
+</svg>
+
+</i>Building<b>Bank</b>
+    </a>  		
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarSupportedContent" class="collapse navbar-collapse justify-content-end">
+          <div class="navbar-nav ml-auto">
+            <a href="./accounts.html" class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a>
+            <a href="#" class="nav-item nav-link active"><i class="fa fa-credit-card-alt" aria-hidden="true"></i><span>Cards</span></a>
+            <a href="./accounts.html" class="nav-item nav-link active"><i class="fa fa-users" aria-hidden="true"></i><span>Your Accounts</span></a>
+            <div class="nav-item dropdown mx-2">
+              <a href="#" data-bs-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"> {{client.firstName +" " + client.lastName}} <b class="caret"></b></a>
+              <div class="dropdown-menu mx-2">
+                <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+                <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
+                <div class="divider dropdown-divider"></div>
+                <a href="#" class="dropdown-item" v-on:click.prevent="logout()"><i class="material-icons">&#xE8AC;</i> Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="d-flex justify-content-center" v-if="loading">
+      <div class="spinner-border"></div>
+
+    </div>
+    <main>
+      <div class="d-flex justify-content-center">
+          <form class="col-4">
+              <fieldset>
+                <legend>Seleccione la cuenta desde la cual quiere realizar la transferencia</legend>
+                <select required v-model="cuentaDeOrigen">
+                  <option disabled value="">Seleccione una cuenta</option>
+                  <option v-for="cuenta in cuentas" :value="cuenta.number">{{cuenta.number}}</option>
+                </select>
+              </fieldset>
+              <fieldset v-if="cuentaDeOrigen != ''">
+                  <legend>A donde desea realizar la transferencia</legend>
+                  <input type="radio" value="misCuentas" name="transferirA" v-model="transferirA" id="misCuentas">
+                  <label for="misCuentas">Mis cuentas</label>
+                  <input type="radio" value="otraCuenta" name="transferirA" v-model="transferirA" id="otraCuenta">
+                  <label for="otraCuenta">Otra cuenta</label>
+              </fieldset>
+              <fieldset v-if="transferirA == 'misCuentas'" class="d-flex flex-column">
+                <legend>Seleccione una de sus cuentas:</legend>
+                <select v-model="cuentaDeDestino">
+                  <option disabled value="">Seleccione una cuenta</option>
+                  <option v-for="cuenta in cuentasDestinoFiltro()" :value="cuenta.number">{{cuenta.number}}</option>
+                </select>
+                <button class="btn btn-dark" type="submit" :disabled="cuentaDeDestino == ''">Enviar</button>
+              </fieldset>
+              <fieldset v-else-if="transferirA == 'otraCuenta'" class="d-flex flex-column">
+                <label>
+                  Ingrese el numero de la cuenta:
+                  <input type="text" v-model="numeroDeCuentaDestino" placeholder="(VIN-XXXXXXXX)">
+                  
+                </label>
+                <button class="btn btn-dark" type="submit" :disabled="numeroDeCuentaDestino == ''">Enviar</button>
+              </fieldset>
+  
+              
+          </form>
+      </div>
+            
+    </main>
+   
+    
+
+  </div>
+  <footer>
+
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="./script/transfer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+</body>
+</html>
