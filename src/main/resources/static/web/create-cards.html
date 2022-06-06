@@ -73,11 +73,10 @@
     </div>
     <main v-else class="pt-3">
   
-      <div class="col-lg-12">
-        <h1>Agregar tarjetas</h1>
-      </div>
-      <div>
-        <form v-on:submit.prevent="addCard">
+
+      <div class="d-flex justify-content-center">
+        <form class="col-10 col-lg-4" v-on:submit.prevent="addCard">
+          <legend>Agregar tarjetas</legend>
           <label for="typeCard">Tipo de Tarjeta</label>
           <select class="form-select" id="typeCard" v-model="cardType">
           
@@ -90,7 +89,7 @@
             <option value="SILVER">SILVER</option>
             <option value="TITANIUM">TITANIUM</option>
           </select>
-          <button type="submit" class="btn btn-dark ms-3">Crear</button>
+          <button type="submit" class="btn btn-dark">Crear</button>
         </form>
       </div>
     </main>

@@ -35,7 +35,7 @@ public class TransactionController {
 
     @Transactional
     @RequestMapping(path = "/transactions", method = RequestMethod.POST)
-    public ResponseEntity<Object> transaction(Authentication authentication, @RequestParam double amount,
+    public ResponseEntity<Object> transaction(Authentication authentication, @RequestParam Double amount,
                                               @RequestParam String description,
                                               @RequestParam String numberOriginAccount,
                                               @RequestParam String numberDestinyAccount){
@@ -44,7 +44,7 @@ public class TransactionController {
         Account originAccount = accountRepository.findByNumber(numberOriginAccount);
         Account destinyAccount = accountRepository.findByNumber(numberDestinyAccount);
 
-        if(amount<=0 || description.isEmpty() || numberOriginAccount.isEmpty() || numberDestinyAccount.isEmpty()){
+        if(amount == null || description.isEmpty() || numberOriginAccount.isEmpty() || numberDestinyAccount.isEmpty()){
             return new ResponseEntity<>("Datos incorrectos", HttpStatus.FORBIDDEN);
         }
         if(numberOriginAccount.equals(numberDestinyAccount)){

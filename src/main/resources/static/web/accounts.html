@@ -52,6 +52,7 @@
         <div id="navbarSupportedContent" class="collapse navbar-collapse justify-content-end">
           <div class="navbar-nav ml-auto">
             <a href="#" class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a>
+            <a href="./transfer.html" class="nav-item nav-link active"><i class="fa fa-exchange" aria-hidden="true"></i><span>Transfer</span></a>
             <a href="./cards.html" class="nav-item nav-link active"><i class="fa fa-credit-card-alt" aria-hidden="true"></i><span>Cards</span></a>
             <a href="./accounts.html" class="nav-item nav-link active"><i class="fa fa-users" aria-hidden="true"></i><span>Your Accounts</span></a>
             <div class="nav-item dropdown mx-2">
@@ -67,11 +68,11 @@
         </div>
       </nav>
     </header>
-    <div class="d-flex justify-content-center" v-if="loading">
+    <!-- <div class="d-flex justify-content-center spinneer" v-if="loading">
       <div class="spinner-border"></div>
 
-    </div>
-    <main v-else class="pt-3">
+    </div> -->
+    <main class="pt-3">
   
       <div class="col-lg-12">
         <h1>Bienvenido/a {{client.firstName + " " + client.lastName}}</h1>
@@ -90,7 +91,7 @@
                         <h6 class="card-subtitle mb-2"><i class="fa fa-money" aria-hidden="true"></i> {{account.balance}}</h6>
   
                       </div>
-                      <p class="card-text text-muted">Fecha de creación: {{account.creationDate}}</p>
+                      <p class="card-text text-muted">Fecha de creación: {{fechaDeCreacion(account)}}</p>
                     </div>
                   </div>
                 </div>

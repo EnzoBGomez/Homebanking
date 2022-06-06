@@ -1,4 +1,4 @@
-let URLAPI = `http://localhost:8080/api/clients/current`
+let URLAPI = `http://localhost:8080/api/clients/current/accounts`
 
 Vue.createApp({
     data() {
@@ -11,6 +11,8 @@ Vue.createApp({
             transferirA:'',
             numeroDeDestino:'',
             numeroDeCuentaDestino:'',
+            montoATransferir: 0,
+            descripcionTransferencia:"",
 
         }
     },
@@ -18,8 +20,8 @@ Vue.createApp({
         await axios.get(URLAPI)
         .then(response => {
             console.log(response)
-            this.client = response.data;
-            this.cuentas = response.data.accounts;
+            
+            this.cuentas = response.data;
         })
         this.loading = false;
     },
@@ -31,7 +33,30 @@ Vue.createApp({
         },
         cuentasDestinoFiltro(){
             return this.cuentas.filter(cuenta => cuenta.number != this.cuentaDeOrigen);
+        },
+        // cuentasIguales(){
+        //     let numerosCuentas = this.cuentas.map(cuenta => cuenta.number)
+        //     console.log(numerosCuentas)
+        //     console.log(this.numeroDeCuentaDestino)
+        //     console.log(numerosCuentas.includes(this.numeroDeCuentaDestino))
+            
+        //     return numerosCuentas.includes(this.numeroDeCuentaDestino)
+        // }
+        cuentaSeleccionada(){
+            return this.cuentas.filter(cuenta => cuenta.number == this.cuentaDeOrigen)[0]
+        },
+        // validarDato(){
+        //     return (this.montoATransferir === 0 && this.numeroDeCuentaDestino.length != 12)
+        // }
+        abrirModal(){
+            $('#modalTransfer').modal('show'); // abrir
+        },
+        transaccion(){
+            axios.post('/api/transactions',`amount=${this.montoATransferir}&description=${this.descripcionTransferencia}&numberOriginAccount=${this.cuentaDeOrigen}&numberDestinyAccount=${this.numeroDeCuentaDestino}`)
+            .then(response => console.log(response));
+            location.href='http://localhost:8080/web/accounts.html'
         }
+
         
     }
 }).mount('#app')

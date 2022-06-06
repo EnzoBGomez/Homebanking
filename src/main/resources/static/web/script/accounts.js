@@ -11,7 +11,8 @@ Vue.createApp({
             loading: true,
             client: {},
             accounts:[],
-            loans:[]
+            loans:[],
+            
         }
     },
     async created(){
@@ -39,6 +40,12 @@ Vue.createApp({
               console.log("cuenta creada");
               location.reload()  
             } )
+        },
+        fechaDeCreacion(cuenta){
+            let fechaDeCreacion = cuenta.creationDate.split("T")[0]
+            return fechaDeCreacion;
+            
         }
+
     }
 }).mount('#app')

@@ -57,7 +57,7 @@
             <a href="#" class="nav-item nav-link active"><i class="fa fa-credit-card-alt" aria-hidden="true"></i><span>Cards</span></a>
             <a href="./accounts.html" class="nav-item nav-link active"><i class="fa fa-users" aria-hidden="true"></i><span>Your Accounts</span></a>
             <div class="nav-item dropdown mx-2">
-              <a href="#" data-bs-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"> {{client.firstName +" " + client.lastName}} <b class="caret"></b></a>
+              <a href="#" data-bs-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"> {{cuentas[0]?.clientName}} <b class="caret"></b></a>
               <div class="dropdown-menu mx-2">
                 <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
                 <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
@@ -75,42 +75,73 @@
     </div>
     <main>
       <div class="d-flex justify-content-center">
-          <form class="col-4">
+          <form @submit.prevent="abrirModal" class="col-10 col-lg-4 mt-4">
               <fieldset>
                 <legend>Seleccione la cuenta desde la cual quiere realizar la transferencia</legend>
                 <select required v-model="cuentaDeOrigen">
                   <option disabled value="">Seleccione una cuenta</option>
                   <option v-for="cuenta in cuentas" :value="cuenta.number">{{cuenta.number}}</option>
                 </select>
+                <p class="text-success" v-if="cuentaDeOrigen != ''">Su saldo es: ${{cuentaSeleccionada()?.balance}}</p>
               </fieldset>
-              <fieldset v-if="cuentaDeOrigen != ''">
+              <fieldset v-if="cuentaDeOrigen != ''" class="my-1">
                   <legend>A donde desea realizar la transferencia</legend>
-                  <input type="radio" value="misCuentas" name="transferirA" v-model="transferirA" id="misCuentas">
-                  <label for="misCuentas">Mis cuentas</label>
-                  <input type="radio" value="otraCuenta" name="transferirA" v-model="transferirA" id="otraCuenta">
-                  <label for="otraCuenta">Otra cuenta</label>
+                  <input class="mx-1" v-on:click="numeroDeCuentaDestino = ''" type="radio" value="misCuentas" name="transferirA"  v-model="transferirA" id="misCuentas" :disabled="cuentas.length<2">
+                  <label class="me-5" for="misCuentas">Mis cuentas</label>
+                  <input class="mx-1" v-on:click="numeroDeCuentaDestino = ''" type="radio" value="otraCuenta" name="transferirA" v-model="transferirA" id="otraCuenta">
+                  <label  for="otraCuenta">Otra cuenta</label>
               </fieldset>
               <fieldset v-if="transferirA == 'misCuentas'" class="d-flex flex-column">
                 <legend>Seleccione una de sus cuentas:</legend>
-                <select v-model="cuentaDeDestino">
+                <select class="my-2" v-model="numeroDeCuentaDestino">
                   <option disabled value="">Seleccione una cuenta</option>
                   <option v-for="cuenta in cuentasDestinoFiltro()" :value="cuenta.number">{{cuenta.number}}</option>
                 </select>
-                <button class="btn btn-dark" type="submit" :disabled="cuentaDeDestino == ''">Enviar</button>
+                <label>
+                  Ingrese el monto a transferir
+                  <input class="my-2" type="number" v-model="montoATransferir" min="0" :max="cuentaSeleccionada()?.balance">
+                </label>
+                <label>Descripcion de la transferencia:
+                  <textarea v-model="descripcionTransferencia" required cols="35" rows="5"></textarea>
+                </label>
+                <button class="btn btn-dark" type="submit" :disabled="numeroDeCuentaDestino == ''">Enviar</button>
               </fieldset>
               <fieldset v-else-if="transferirA == 'otraCuenta'" class="d-flex flex-column">
                 <label>
                   Ingrese el numero de la cuenta:
-                  <input type="text" v-model="numeroDeCuentaDestino" placeholder="(VIN-XXXXXXXX)">
-                  
+                  <input class="my-2" type="text" v-model="numeroDeCuentaDestino" placeholder="(VIN-XXXXXXXX)">
                 </label>
-                <button class="btn btn-dark" type="submit" :disabled="numeroDeCuentaDestino == ''">Enviar</button>
+                <label>
+                  Ingrese el monto a transferir
+                  <input class="my-2" type="number" v-model="montoATransferir" min="0" :max="cuentaSeleccionada()?.balance">
+                </label>
+                <label>Descripcion de la transferencia:
+                  <textarea v-model="descripcionTransferencia" required cols="35" rows="5"></textarea>
+                </label>
+                <button class="btn btn-dark" type="submit" :disabled="!((montoATransferir !== 0) && (numeroDeCuentaDestino !== ''))">Enviar</button>
               </fieldset>
   
               
           </form>
       </div>
-            
+      <div class="modal fade" id="modalTransfer" tabindex="-1" aria-labelledby="modalLabelTransfer" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLabelTransfer">Transferir monto</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Para continuar con la operacion hace click sobre el boton de "Transferir"</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" data-bs-dismiss="modal" v-on:click="transaccion">Transferir</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </main>
    
     
@@ -119,6 +150,7 @@
   <footer>
 
   </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/vue@3"></script>
   <script src="./script/transfer.js"></script>

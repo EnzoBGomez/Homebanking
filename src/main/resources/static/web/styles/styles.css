@@ -472,3 +472,7 @@ main {
 .button-add-account{
 	height: 5vh;
 }
+.spinneer{
+	min-height: 80vh;
+	min-width: 100vw;
+}

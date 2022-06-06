@@ -34,9 +34,9 @@ public class HomebankingApplication {
 			repositoryClient.save(client1);
             Client client2 = new Client("Melba2","More2l","melb2a@admin.com",passwordEncoder.encode("contraadmin"));
             repositoryClient.save(client2);
-			Account account1 = new Account("VIN-001",today, 5000, client1);
+			Account account1 = new Account("VIN-00000001",today, 5000, client1);
 			repositoryAccount.save(account1);
-			Account account2 = new Account("VIN-002",today.plusDays(1), 7500,client1);
+			Account account2 = new Account("VIN-00000002",today.plusDays(1), 7500,client1);
 			repositoryAccount.save(account2);
 			Transaction transaction1 = new Transaction(TransactionType.DEBITO, -20000, "gabinete", today.plusDays(2), account1);
 			Transaction transaction2 = new Transaction(TransactionType.CREDITO, 4000, "regalo", today.plusDays(1), account1);
