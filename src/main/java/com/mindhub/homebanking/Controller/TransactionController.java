@@ -53,9 +53,7 @@ public class TransactionController {
         if(!accountRepository.existsByNumber(numberOriginAccount)){
             return new ResponseEntity<>("La cuenta de origen no existe", HttpStatus.FORBIDDEN);
         }
-//        if(!client.getAccounts().stream().map(account -> account.getNumber()).collect(Collectors.toSet()).contains(numberOriginAccount)){
-//            return new ResponseEntity<>("No posee una cuenta con ese numero", HttpStatus.FORBIDDEN);
-//        }
+
         if(!client.getAccounts().contains(originAccount)){
             return new ResponseEntity<>("No posee una cuenta con ese numero", HttpStatus.FORBIDDEN);
         }
@@ -72,9 +70,9 @@ public class TransactionController {
                 LocalDateTime.now(), originAccount);
 
         originAccount.setBalance((originAccount.getBalance()) - amount);
-
+        accountRepository.save(originAccount);
         destinyAccount.setBalance((destinyAccount.getBalance()) + amount);
-
+        accountRepository.save(destinyAccount);
         Transaction transactionDestiny = new Transaction(TransactionType.CREDITO, amount,
                 description + "transferencia hecha por " + numberOriginAccount,
                 LocalDateTime.now(), destinyAccount);

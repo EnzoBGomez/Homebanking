@@ -8,4 +8,5 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 //@CrossOrigin
 @RepositoryRestResource
 public interface LoanRepository extends JpaRepository<Loan, Long> {
+    boolean existsById(Long Id);
 }

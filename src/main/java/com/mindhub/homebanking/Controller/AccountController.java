@@ -63,9 +63,5 @@ public class AccountController {
         ClientDTO client = new ClientDTO(clientRepository.findByEmail(authentication.getName()));
         return new ArrayList<>(client.getAccounts());
     }
-//    @RequestMapping("/clients/current/accounts/{id}")
-//    public AccountDTO getAccountDTO(@PathVariable long id){
-//
-//
-//    }
+
 }

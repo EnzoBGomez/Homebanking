@@ -4,6 +4,7 @@ import com.mindhub.homebanking.Models.Card;
 import com.mindhub.homebanking.Models.CardColor;
 import com.mindhub.homebanking.Models.CardType;
 
+import javax.persistence.Entity;
 import java.time.LocalDateTime;
 
 public class CardDTO {
@@ -59,4 +60,5 @@ public class CardDTO {
     public CardColor getColor() {
         return color;
     }
+
 }
