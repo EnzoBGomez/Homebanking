@@ -54,7 +54,7 @@ Vue.createApp({
             $('#modalLoan').modal('show'); // abrir
         },
         redirigirALoan(){
-            location.href = './web/loan-application.html'
+            location.href = '/web/loan-application.html'
         },
         deleteAccount(number){
             axios.patch('/api/clients/current/accounts',`number=${number}`).then(response => {
