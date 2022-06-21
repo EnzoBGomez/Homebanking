@@ -1,4 +1,4 @@
-let URLAPI = `http://localhost:8080/api/clients/current`
+let URLAPI = `/api/clients/current`
 
 Vue.createApp({
     data() {
@@ -27,13 +27,13 @@ Vue.createApp({
             //console.log("asd")
             await axios.post('/api/logout').then(response => {
                 console.log('signed out!!!');
-                location.href ='http://localhost:8080/web/index.html';
+                location.href ='/web/index.html';
             })
         },
         addCard(){
             axios.post('/api/clients/current/cards', `cardType=${this.cardType}&cardColor=${this.cardColor}`)
             .then(response => {
-                location.href ='http://localhost:8080/web/cards.html';
+                location.href ='/web/cards.html';
               })
         }
     }

@@ -1,7 +1,7 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 const myId = urlParams.get('id');
-let URLAPIACC = `http://localhost:8080/api/clients/current/accounts/${myId}`
+let URLAPIACC = `/api/clients/current/accounts/${myId}`
 Vue.createApp({
     data(){
         return{
@@ -42,7 +42,7 @@ Vue.createApp({
         },
         async logout(){
             await axios.post('/api/logout').then(response => console.log('signed out!!!'));
-            location.href ='http://localhost:8080/web/index.html';
+            location.href ='/web/index.html';
         },
         fechaDeCreacion(fecha){
             let fechaDeCreacion = fecha.split("T")[0]

@@ -3,7 +3,7 @@
 // let URLAPI = `http://localhost:8080/api/accounts/${myId}`
 
 
-let URLAPI = `http://localhost:8080/api/clients/current`
+let URLAPI = `/api/clients/current`
 
 Vue.createApp({
     data() {
@@ -33,7 +33,7 @@ Vue.createApp({
             //console.log("asd")
             await axios.post('/api/logout').then(response => {
                 console.log('signed out!!!');
-                location.href ='http://localhost:8080/web/index.html';
+                location.href ='/web/index.html';
             })
         },
         async addAccount(){
@@ -54,11 +54,11 @@ Vue.createApp({
             $('#modalLoan').modal('show'); // abrir
         },
         redirigirALoan(){
-            location.href = 'http://localhost:8080/web/loan-application.html'
+            location.href = '/web/loan-application.html'
         },
         deleteAccount(number){
             axios.patch('/api/clients/current/accounts',`number=${number}`).then(response => {
-                location.href='http://localhost:8080/web/accounts.html'
+                location.href='/web/accounts.html'
             })
 
         }

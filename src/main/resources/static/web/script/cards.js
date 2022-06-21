@@ -1,4 +1,4 @@
-let URLAPI = `http://localhost:8080/api/clients/current/cards`
+let URLAPI = `/api/clients/current/cards`
 
 Vue.createApp({
     data() {
@@ -30,7 +30,7 @@ Vue.createApp({
     },
     methods:{
         async clienteLogueado(){
-            await axios.get("http://localhost:8080/api/clients/current")
+            await axios.get("/api/clients/current")
             .then(response => {
                 this.client = response.data;
             })
@@ -51,16 +51,16 @@ Vue.createApp({
         async logout(){
             console.log("asd")
             await axios.post('/api/logout').then(response => console.log('signed out!!!'));
-            location.href ='http://localhost:8080/web/index.html';
+            location.href ='/web/index.html';
         },
         toCreateCard(){
-            location.href='http://localhost:8080/web/create-cards.html';
+            location.href='/web/create-cards.html';
         },
         async deleteCard(idCard){
             await axios.patch('/api/clients/current/cards',`idCard=${idCard}`).then(response => {
                 console.log(response)
             })
-            location.href='http://localhost:8080/web/cards.html'
+            location.href='/web/cards.html'
         },
         // currentDate(){
         //     const date = new Date()

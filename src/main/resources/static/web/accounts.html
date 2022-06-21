@@ -82,7 +82,7 @@
         <div class="d-flex justify-content-center">
           <div class="cuentas d-flex justify-content-around col-6 col-lg-12 flex-wrap">
             <div v-for="account in accounts">
-              <a class="link-card" :href="'http://localhost:8080/web/account.html?id=' + account.id">
+              <a class="link-card" :href="'/web/account.html?id=' + account.id">
                 <div class="card my-4 mx-3">
                   <div class="card-body">
                     <h5 class="card-title">CUENTA {{account.number}}</h5>

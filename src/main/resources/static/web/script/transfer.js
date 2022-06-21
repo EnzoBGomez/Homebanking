@@ -1,4 +1,4 @@
-let URLAPI = `http://localhost:8080/api/clients/current/accounts`
+let URLAPI = `/api/clients/current/accounts`
 
 Vue.createApp({
     data() {
@@ -38,7 +38,7 @@ Vue.createApp({
         async logout(){
             console.log("asd")
             await axios.post('/api/logout').then(response => console.log('signed out!!!'));
-            location.href ='http://localhost:8080/web/index.html';
+            location.href ='/web/index.html';
         },
         cuentasDestinoFiltro(){
             return this.cuentas.filter(cuenta => cuenta.number != this.cuentaDeOrigen);
@@ -63,7 +63,7 @@ Vue.createApp({
         transaccion(){
             axios.post('/api/transactions',`amount=${this.montoATransferir}&description=${this.descripcionTransferencia}&numberOriginAccount=${this.cuentaDeOrigen}&numberDestinyAccount=${this.numeroDeCuentaDestino}`)
             .then(response => console.log(response));
-            location.href='http://localhost:8080/web/accounts.html'
+            location.href='/web/accounts.html'
         }
 
         
