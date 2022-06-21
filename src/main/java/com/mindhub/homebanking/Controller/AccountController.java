@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @RestController
@@ -44,7 +45,7 @@ public class AccountController {
     public ResponseEntity<?> createAccount(Authentication authentication, @RequestParam AccountType typeAccount ) {
 
         Client client = clientService.getCurrentClient(authentication);
-        if(client.getAccounts().size() > 2)
+        if(client.getAccounts().stream().filter(Account::isActiveAccount).collect(Collectors.toSet()).size() > 2)
             return new ResponseEntity<>("Ya tiene 3 cuentas", HttpStatus.FORBIDDEN);
 
         accountService.saveAccount(new Account(accountService.NumeroDeCuentaNoExistente(0, 99999999, 8)
@@ -83,7 +84,7 @@ public class AccountController {
         if(!client.getAccounts().contains(account)){
             return new ResponseEntity<>("Esta cuenta no le pertenece", HttpStatus.FORBIDDEN);
         }
-        if (client.getAccounts().size() < 2){
+        if (client.getAccounts().stream().filter(Account::isActiveAccount).collect(Collectors.toSet()).size() < 2){
             return new ResponseEntity<>("No puede eliminar la unica cuenta que tiene", HttpStatus.FORBIDDEN);
         }
         transactionService.deleteTransaction(account);
