@@ -32,22 +32,22 @@ public final class Utility {
 
         return numeroFinal;
     }
-    public static String noRepeatNumberAccount(AccountRepository accountRepository, int min, int max, int digitos){
-        String accountNumber;
-        do {
-            accountNumber = "VIN-"+ numeroDeDigitos(min, max, digitos);
-        }while (accountRepository.existsByNumber(accountNumber));
+//    public static String noRepeatNumberAccount(AccountRepository accountRepository, int min, int max, int digitos){
+//        String accountNumber;
+//        do {
+//            accountNumber = "VIN-"+ numeroDeDigitos(min, max, digitos);
+//        }while (accountRepository.existsByNumber(accountNumber));
+//
+//        return accountNumber;
+//    }
 
-        return accountNumber;
-    }
-
-    public static String noRepeatNumberCard(CardRepository cardRepository){
-        String cardNumber;
-        do {
-            cardNumber = ""+numeroDeDigitos(0,9999,4)+""+numeroDeDigitos(0,9999,4)+""+numeroDeDigitos(0,9999,4)+""+numeroDeDigitos(0,9999,4);
-        }while (cardRepository.existsByNumber(cardNumber));
-
-        return cardNumber;
-    }
+//    public static String noRepeatNumberCard(CardRepository cardRepository){
+//        String cardNumber;
+//        do {
+//            cardNumber = ""+numeroDeDigitos(0,9999,4)+""+numeroDeDigitos(0,9999,4)+""+numeroDeDigitos(0,9999,4)+""+numeroDeDigitos(0,9999,4);
+//        }while (cardRepository.existsByNumber(cardNumber));
+//
+//        return cardNumber;
+//    }
 
 }

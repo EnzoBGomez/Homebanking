@@ -23,9 +23,18 @@ Vue.createApp({
             
             this.cuentas = response.data;
         })
+
+        this.cargarCliente();
         this.loading = false;
     },
     methods:{
+        async cargarCliente() {
+            await axios.get("/api/clients/current")
+                .then(response => {
+                    this.client = response.data
+                    console.log(response.data)
+                })
+        },
         async logout(){
             console.log("asd")
             await axios.post('/api/logout').then(response => console.log('signed out!!!'));

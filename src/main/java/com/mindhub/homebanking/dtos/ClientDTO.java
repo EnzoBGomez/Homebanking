@@ -61,13 +61,13 @@ public class ClientDTO {
     }
 
     public Set<AccountDTO> getAccounts() {
-        return accounts;
+        return accounts.stream().filter(AccountDTO::isActiveAccount).collect(Collectors.toSet());
     }
     public Set<ClientLoanDTO> getLoans() {
         return loans;
     }
 
     public Set<CardDTO> getCards() {
-        return cards;
+        return cards.stream().filter(CardDTO::isCardActive).collect(Collectors.toSet());
     }
 }

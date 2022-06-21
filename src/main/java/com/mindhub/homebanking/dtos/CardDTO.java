@@ -14,6 +14,7 @@ public class CardDTO {
     private String cardHolder, number;
     private CardType type;
     private CardColor color;
+    private boolean cardActive;
 
     public CardDTO() {
     }
@@ -27,6 +28,7 @@ public class CardDTO {
         this.number = card.getNumber();
         this.type = card.getType();
         this.color = card.getColor();
+        this.cardActive = card.isCardActive();
     }
 
     public long getId() {
@@ -61,4 +63,11 @@ public class CardDTO {
         return color;
     }
 
+    public boolean isCardActive() {
+        return cardActive;
+    }
+
+    public void setCardActive(boolean cardActive) {
+        this.cardActive = cardActive;
+    }
 }

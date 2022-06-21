@@ -11,6 +11,8 @@ public class TransactionDTO {
     private double amount;
     private String description;
     private LocalDateTime date;
+    private boolean transactionActive;
+    private double remainingAmount;
 
     public TransactionDTO() {
     }
@@ -21,6 +23,8 @@ public class TransactionDTO {
         this.amount = transaction.getAmount();
         this.description = transaction.getDescription();
         this.date = transaction.getDate();
+        this.transactionActive = transaction.isTransactionActive();
+        this.remainingAmount = transaction.getRemainingAmount();
     }
 
     public long getId() {
@@ -58,5 +62,17 @@ public class TransactionDTO {
 
     public void setDate(LocalDateTime date) {
         this.date = date;
+    }
+
+    public double getRemainingAmount() {
+        return remainingAmount;
+    }
+
+    public boolean isTransactionActive() {
+        return transactionActive;
+    }
+
+    public void setRemainingAmount(double remainingAmount) {
+        this.remainingAmount = remainingAmount;
     }
 }

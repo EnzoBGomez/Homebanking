@@ -11,9 +11,10 @@ import java.util.Set;
 
 public class LoanDTO {
     private Long id;
-    private LoanType name;
+    private String name;
     private Double maxAmount;
     private List<Integer> payments = new ArrayList<>();
+    private Float interest;
 
 
     public LoanDTO() {
@@ -23,6 +24,7 @@ public class LoanDTO {
         this.maxAmount = loan.getMaxAmount();
         this.name = loan.getName();
         this.payments = loan.getPayments();
+        this.interest = loan.getInterest();
     }
 
     public Long getId() {
@@ -30,11 +32,11 @@ public class LoanDTO {
     }
 
 
-    public LoanType getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(LoanType name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -52,5 +54,9 @@ public class LoanDTO {
 
     public void setPayments(List<Integer> payments) {
         this.payments = payments;
+    }
+
+    public Float getInterest() {
+        return interest;
     }
 }

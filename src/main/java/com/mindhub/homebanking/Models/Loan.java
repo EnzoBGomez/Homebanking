@@ -16,8 +16,9 @@ public class Loan {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private Long id;
-    private LoanType name;
+    private String name;
     private Double maxAmount;
+    private Float interest;
     @ElementCollection
     @Column(name="payments")
     private List<Integer> payments = new ArrayList<>();
@@ -29,10 +30,11 @@ public class Loan {
     public Loan() {
     }
 
-    public Loan(LoanType name, Double maxAmount, List<Integer> payments) {
+    public Loan(String name, Double maxAmount, List<Integer> payments, Float interest) {
         this.name = name;
         this.maxAmount = maxAmount;
         this.payments = payments;
+        this.interest = interest;
     }
 
     public Long getId() {
@@ -40,11 +42,11 @@ public class Loan {
     }
 
 
-    public LoanType getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(LoanType name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -68,7 +70,15 @@ public class Loan {
         clientLoan.setLoan(this);
         clientLoans.add(clientLoan);
     }
-    //public List<Client> getClients(){
+
+    public Float getInterest() {
+        return interest;
+    }
+
+    public void setInterest(Float interest) {
+        this.interest = interest;
+    }
+//public List<Client> getClients(){
     //    return clientLoans.stream().map(loan -> loan.getClient()).collect(toList());
     //}
 }

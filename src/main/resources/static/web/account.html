@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-    <link rel="icon" type="image/png" href="../assets/bank.png"/>
+    <link rel="icon" type="image/png" href="./assets/bank.png"/>
     <title>Account</title>
 </head>
 <body>
   <div id="app">
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a href="#" class="navbar-brand">
+        <a href="./accounts.html" class="navbar-brand">
           <svg width="40" height="40" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 595.28 841.89" style="enable-background:new 0 0 595.28 841.89;" xml:space="preserve" fill="white">
 
@@ -53,6 +53,7 @@
         <div id="navbarSupportedContent" class="collapse navbar-collapse justify-content-end">
           <div class="navbar-nav ml-auto">
             <a href="./accounts.html" class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a>
+            <a href="./transfer.html" class="nav-item nav-link active"><i class="fa fa-exchange" aria-hidden="true"></i><span>Transfer</span></a>
             <a href="./cards.html" class="nav-item nav-link active"><i class="fa fa-credit-card-alt" aria-hidden="true"></i><span>Cards</span></a>
             <a href="./accounts.html" class="nav-item nav-link active"><i class="fa fa-users" aria-hidden="true"></i><span>Your Accounts</span></a>
             <div class="nav-item dropdown mx-2">
@@ -68,27 +69,27 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main class="p-4">
       <h1>CUENTA: {{account.number}}</h1>
       
 
         <table class="table table-dark table-hover table-bordered table-responsive mt-4">
             <thead>
               <tr>
-                <th scope="col">ID</th>
                 <th scope="col">Type</th>
                 <th scope="col">Amount</th>
                 <th scope="col">Description</th>
                 <th scope="col">Date</th>
+                <th scope="col">Remaining</th>
               </tr>
             </thead>
             <tbody>
               <tr :class="{'table-success':cadenasIguales(transaction.type), 'table-danger':!cadenasIguales(transaction.type)}" v-for="transaction in transactions">
-                <td>{{transaction.id}}</td>
                 <td>{{transaction.type}}</td>
                 <td>${{transaction.amount}}</td>
                 <td>{{transaction.description}}</td>
-                <td>{{transaction.date}}</td>
+                <td>{{fechaDeCreacion(transaction.date)}}</td>
+                <td>${{transaction.remainingAmount}}</td>
               </tr>
             </tbody>
         </table>  

@@ -1,7 +1,7 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 const myId = urlParams.get('id');
-let URLAPIACC = `http://localhost:8080/api/clients/current`//PARCHE TEMPORAL
+let URLAPIACC = `http://localhost:8080/api/clients/current/accounts/${myId}`
 Vue.createApp({
     data(){
         return{
@@ -13,7 +13,7 @@ Vue.createApp({
         axios.get(URLAPIACC)
         .then(response => {
             console.log(response)
-            this.account = response.data.accounts.filter(acc => acc.id == myId)[0];
+            this.account = response.data
             this.transactions = this.account.transactions.sort(function(a, b) {
                 return b.id - a.id;
               });
@@ -43,6 +43,11 @@ Vue.createApp({
         async logout(){
             await axios.post('/api/logout').then(response => console.log('signed out!!!'));
             location.href ='http://localhost:8080/web/index.html';
-        }
+        },
+        fechaDeCreacion(fecha){
+            let fechaDeCreacion = fecha.split("T")[0]
+            return fechaDeCreacion;
+            
+        },
     }
 }).mount('#app')

@@ -22,6 +22,7 @@ public class Card {
     private String cardHolder, number;
     private CardType type;
     private CardColor color;
+    private boolean cardActive;
 
     public Card() {
     }
@@ -35,6 +36,7 @@ public class Card {
         this.type = type;
         this.color = color;
         this.client = client;
+        this.cardActive = true;
     }
 
     public long getId() {
@@ -104,5 +106,13 @@ public class Card {
 
     public void setColor(CardColor color) {
         this.color = color;
+    }
+
+    public boolean isCardActive() {
+        return cardActive;
+    }
+
+    public void setCardActive(boolean cardActive) {
+        this.cardActive = cardActive;
     }
 }

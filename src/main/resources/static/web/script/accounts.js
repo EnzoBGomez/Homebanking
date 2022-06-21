@@ -12,6 +12,7 @@ Vue.createApp({
             client: {},
             accounts:[],
             loans:[],
+            tipoDeCuenta:'',
             
         }
     },
@@ -35,8 +36,8 @@ Vue.createApp({
                 location.href ='http://localhost:8080/web/index.html';
             })
         },
-        addAccount(){
-            axios.post('/api/clients/current/accounts').then(response =>{
+        async addAccount(){
+            await axios.post('/api/clients/current/accounts',`typeAccount=${this.tipoDeCuenta}`).then(response =>{
               console.log("cuenta creada");
               location.reload()  
             } )
@@ -45,7 +46,21 @@ Vue.createApp({
             let fechaDeCreacion = cuenta.creationDate.split("T")[0]
             return fechaDeCreacion;
             
-        }
+        },
+        abrirModalCrearCuenta(){
+            $('#modalCreateAccount').modal('show'); // abrir
+        },
+        abrirModalPedirPrestamo(){
+            $('#modalLoan').modal('show'); // abrir
+        },
+        redirigirALoan(){
+            location.href = 'http://localhost:8080/web/loan-application.html'
+        },
+        deleteAccount(number){
+            axios.patch('/api/clients/current/accounts',`number=${number}`).then(response => {
+                location.href='http://localhost:8080/web/accounts.html'
+            })
 
+        }
     }
 }).mount('#app')
