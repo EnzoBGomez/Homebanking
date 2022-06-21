@@ -21,7 +21,7 @@ Vue.createApp({
       async login(){
           await axios.post('/api/login',`email=${this.email}&password=${this.password}`,{headers:{'content-type':'application/x-www-form-urlencoded'}})
             .then(response => {
-              console.log('signed in!!!');location.href ='http://localhost:8080/web/accounts.html';
+              console.log('signed in!!!');location.href ='/web/accounts.html';
             }).catch(function (error) 
             {
               if (error.response) {
@@ -49,7 +49,7 @@ Vue.createApp({
             
             await axios.post('/api/clients',`firstName=${this.firsNameRegister}&lastName=${this.lastNameRegister}&email=${this.emailRegister}&password=${this.passwordRegister}`,{headers:{'content-type':'application/x-www-form-urlencoded'}})
             .then(response => {
-              axios.post('/api/login',`email=${this.emailRegister}&password=${this.passwordRegister}`,{headers:{'content-type':'application/x-www-form-urlencoded'}}).then(response => {console.log('signed in!!!');location.href ='http://localhost:8080/web/accounts.html';})
+              axios.post('/api/login',`email=${this.emailRegister}&password=${this.passwordRegister}`,{headers:{'content-type':'application/x-www-form-urlencoded'}}).then(response => {console.log('signed in!!!');location.href ='/web/accounts.html';})
             })
             .catch(function (error) {
               this.errorMensajePeticion = error.response.data
